@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photography</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f8f8f8;
+    }
+
+    header {
+    background-image: url("nature1.jpg");
+    background-size: cover;          
+    height: 380px;            
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    letter-spacing: 2px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+header h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px black;
+}
+
+header p {
+    font-size: 20px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 5px black;
+}
+
+
+    .section-title {
+        text-align: center;
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    .gallery {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    .gallery img {
+        width: 240px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .book-box {
+        background: white;
+        width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+        text-align: center;
+    }
+
+    input, button {
+        width: 90%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #aaa;
+    }
+
+    button {
+        background: black;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #333;
+    }
+
+    .msg {
+        color: green;
+        margin-top: 10px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #716f6f;
+        margin-top: 20px;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Photography Protfolio</h1>
+    <p>Capturing moments from today… Creating memories for a lifetime.</p>
+</header>
+
+<h2 class="section-title">Landscape Photography</h2>
+<div class="gallery">
+    <img src="img.jpg" alt="">
+    <img src="img2.jpg" alt="">
+    <img src="img4.jpg" alt="">
+</div>
+
+<h2 class="section-title">Portrait Photography</h2>
+<div class="gallery">
+    <img src="image.jpg" alt="">
+    <img src="img3.jpg" alt="">
+    <img src="img5.jpg" alt="">
+</div>
+
+<div class="book-box">
+    <h3>Book a Photo Session</h3>
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="date" placeholder="Preferred Date">
+    <button onclick="bookSession()">Book Now</button>
+    <p class="msg" id="message"></p>
+</div>
+
+<script>
+    function bookSession() {
+        let name = document.getElementById("name").value;
+        let date = document.getElementById("date").value;
+        let msg = document.getElementById("message");
+
+        if (name === "" || date === "") {
+            msg.style.color = "red";
+            msg.innerText = "Please fill all fields.";
+        } else {
+            msg.style.color = "green";
+            msg.innerText = "Thank you " + name + "! Your session on " + date + " is booked.";
+        }
+    }
+</script>
+
+<footer>
+    © 2025 My Photography | All Rights Reserved
+</footer>
+
+
+</body>
+</html>
